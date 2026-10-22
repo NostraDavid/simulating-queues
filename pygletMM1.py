@@ -319,7 +319,7 @@ class QueueSimulation:
 
     def __init__(self, settings: SimulationSettings):
         # Get the display and available screens
-        display = pyglet.canvas.Display()
+        display = pyglet.display.get_display()
         screens = display.get_screens()
 
         # Check if the monitor index is valid

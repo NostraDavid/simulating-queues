@@ -11,7 +11,7 @@ documentation here: http://ciw.readthedocs.io/en/latest/
 The original code was Python2 (from around 2012), so I converted it to Python3.
 
 I also added a `pyproject.toml` file to track the dependencies, using Astral's
-`uv` (`0.4.10`) package manager.
+`uv` package manager.
 
 ## IDE
 
@@ -20,8 +20,9 @@ Jupyter notebooks very well.
 
 ## Virtual Environment Setup
 
-To create a virtual environment, just run `uv sync`. No need to install a
-certain Python version; `uv` will take care of that.
+Install Nix, devenv, and direnv. Run `direnv allow`, then `just setup`.
+The environment provides Python 3.12, Tkinter for Turtle graphics, and native
+libraries for the Python wheels.
 
 Then you can just `source .venv/bin/activate` on the terminal, or `ctrl-shift-p`
 -> `Python: Select Interpreter` and then select `./.venv/bin/python` as virtual
@@ -43,3 +44,10 @@ You can also `shift-enter` to run-and-go-to-the-next-cell, or `ctrl-enter` to ru
 You run this one as a regular script; There's should be a play button at the
 upper right corner. There's a dropdown to select debug mode as well (make sure
 to set some breakpoints). You can also press `F5` to run the file.
+
+## Development commands
+
+`just run --help` lists the Turtle simulation options. `just pyglet` starts the
+Pyglet animation. Both graphical programs need a desktop display.
+`just check` runs the statistics tests, compiles the scripts, and checks CLI help.
+`just update` refreshes the Nix and Python dependency locks.

@@ -13,3 +13,12 @@
 
 # folders
 !Images/
+!.envrc
+!devenv.nix
+!devenv.yaml
+!devenv.lock
+!Justfile
+!README.md
+!tests/
+
+__pycache__/
